@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'Actualmente...',
+        title: 'Practicante de Análisis de datos - Daltile México S. de R.L. de C.V.',
+        description: 'Diseño de base de datos, optimización de base de datos y creación de gráficos con DOMO',
+        link: '#'
+    },
+    {
+        date: 'Noviembre 2024',
+        title: 'Practicante Ti (Procesos de Negocio) - Casas Javer de México, S.A. de C.V.',
+        description: 'Alta, capacitación y soporte de plataforma Javer, consultas de busqueda SQL y Seguimiento de proyecto (Monitoreo y Pruebas)',
+        link: '#'
+    },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-60">                  
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
