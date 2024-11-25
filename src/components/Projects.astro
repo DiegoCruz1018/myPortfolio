@@ -1,0 +1,66 @@
+---
+import Html from './icons/Html.astro';
+import Css from './icons/Css.astro';
+import JavaScript from './icons/JavaScript.astro';
+import Php from './icons/Php.astro';
+import MySql from './icons/MySql.astro';
+
+const TAGS = {
+    HTML: {
+        name: 'HTML',
+        class: 'bg-orange text-white',
+        icon: Html
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'bg-skyblue text-white',
+        icon: Css
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        class: 'bg-yellow text-white',
+        icon: JavaScript
+    },
+    PHP: {
+        name: '',
+        class: 'bg-purple-400 text-white',
+        icon: Php
+    },
+    MYSQL: {
+        name: 'MySQL',
+        class: 'bg-blue text-white',
+        icon: MySql
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'Leo Cut´s',
+        description: 'Página creada para administrar citas de una barbershop, donde también podrán crear los servicios que ofrecen y donde los usuarios podrán tener una cuenta para agendar citas',
+        link: '#',
+        github: 'https://github.com/DiegoCruz1018/appSalon',
+        image: '/public/projects/leocuts.png',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.MYSQL]
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, tags, image}) =>(
+        <article class="flex flex-col items-center justify-center">
+            <h3 class="text-2xl font-semibold text-green-200 mb-2">{title}</h3>
+            <p class="prose text-lg mb-4 text-pretty max-w-2xl">{description}</p>
+            <ul class="flex gap-x-2 flex-row items-center justify-center">
+                {tags.map(tag => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4"></tag.icon>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img class="mt-5 mb-10 size-5/12 rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+        </article>
+    ))
+}

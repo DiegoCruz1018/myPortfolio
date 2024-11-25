@@ -6,18 +6,20 @@ import Badge from '../components/Badge.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import GmailIcon from '../components/icons/Gmail.astro';
+import CodeIcon from '../components/icons/Code.astro';
 import SocialPill from '../components/SocialPill.astro';
 import Experience from '../components/Experience.astro';
 import BriefCase from '../components/icons/BriefCase.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout 
 	title="Portfolio de Diego Cruz - Desarrollador y Programador Web con 1 año de experiencia"
 	description="Contrata a Diego para crear tu aplicación web. Desarrollador Web"
 >
-	<main>
-		<SectionContainer class="py-60 p-24">
-			<h1 class="text-white text-5xl fond-bold flex justify-center flex-row gap-x-4 pb-10">
+	<main class="px-2">
+		<SectionContainer id="about" class="py-60 p-32">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl fond-bold flex justify-center flex-row gap-x-4 pb-6 lg:pb-10">
 				Hey, Soy Diego Cruz
 
 				<a 
@@ -30,35 +32,43 @@ import BriefCase from '../components/icons/BriefCase.astro';
 				</a>
 			</h1>
 
-			<h2 class="text-xl flex justify-center text-wrap">
+			<h2 class="text-xl lg:text-2xl flex justify-center text-wrap max-w-[700px] md:max-w-[1200px]">
 				<span class="opacity-80">+1 año de experiencia. </span> <span class="text-yellow-200/90"> Desarrollador Web. </span>  
 				<span class="text-green-100/90"> De Monterrey, Nuevo León. </span> <span class="opacity-75"> Especializado en crear aplicaciones web </span>
 			</h2>
 
-			<nav class="flex gap-x-4 justify-center mt-8">
+			<nav class="flex gap-4 justify-center mt-8 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/diego-cruz-1215622b2/" >
-					<LinkedInIcon class="size-6"></LinkedInIcon>
+					<LinkedInIcon class="size-4 md:size-6"></LinkedInIcon>
 					LinkedIn
 				</SocialPill>
 				
 				<SocialPill href="https://github.com/DiegoCruz1018">
-					<GitHubIcon class="size-6"></GitHubIcon>
+					<GitHubIcon class="size-4 md:size-6"></GitHubIcon>
 					GitHub
 				</SocialPill>
 
 				<SocialPill href="https://github.com/DiegoCruz1018">
-					<GmailIcon class="size-6"></GmailIcon>
+					<GmailIcon class="size-4 md:size-6"></GmailIcon>
 					diegocruzsep@gmail.com
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="experiencia" class="flex flex-col items-center">
+		<SectionContainer id="experience" class="flex flex-col items-center">
 			<h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
 				<BriefCase class="size-8"></BriefCase>
 				Experiencia Laboral
 			</h2>
 			<Experience/>
+		</SectionContainer>
+
+		<SectionContainer id="projects" class="flex flex-col items-center mt-20">
+			<h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+				<CodeIcon class="size-8"></CodeIcon>
+				Proyectos
+			</h2>
+			<Projects/>
 		</SectionContainer>
 	</main>
 </Layout>
